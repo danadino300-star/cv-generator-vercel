@@ -1,65 +1,65 @@
 import { Mail, Phone, MapPin, Linkedin, Globe, Github } from "lucide-react";
-import profileImage from "@assets/generated_images/professional_headshot_of_a_person_in_business_casual_attire.png";
+import profileImage from "@assets/generated_images/professional_headshot_of_a_female_designer.png";
 
 export const resumeData = {
   personalInfo: {
-    name: "Alex Morgan",
-    role: "Senior Product Designer & Engineer",
+    name: "Rima Hazem",
+    role: "Graphic Designer",
     image: profileImage,
-    summary: "Design-driven engineer with 8+ years of experience crafting digital products. Specializing in bridging the gap between design and engineering, creating robust design systems, and building polished user interfaces that scale.",
-    location: "San Francisco, CA",
-    email: "alex.morgan@example.com",
-    phone: "+1 (555) 123-4567",
-    website: "alexmorgan.design",
-    linkedin: "linkedin.com/in/alexmorgan",
-    github: "github.com/alexmorgan"
+    summary: "Creative graphic designer based in Algiers with a passion for visual storytelling. Expert in creating impactful brand identities, marketing materials, and digital content using Canva and the Affinity Suite. Dedicated to delivering high-quality designs that elevate brand presence.",
+    location: "Algiers, Algeria",
+    email: "rima.hazem@example.com",
+    phone: "+213 555 123 456",
+    website: "rimahazem.design",
+    linkedin: "linkedin.com/in/rimahazem",
+    github: "behance.net/rimahazem"
   },
   skills: [
-    { category: "Design", items: ["Figma", "Prototyping", "Design Systems", "User Research", "Interaction Design"] },
-    { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Next.js"] },
-    { category: "Tools", items: ["Git", "VS Code", "Linear", "Notion", "Storybook"] }
+    { category: "Design Software", items: ["Canva Pro", "Affinity Designer", "Affinity Photo", "Affinity Publisher", "Adobe Photoshop"] },
+    { category: "Expertise", items: ["Brand Identity", "Social Media Graphics", "Print Design", "Typography", "Layout Design"] },
+    { category: "Languages", items: ["Arabic (Native)", "French (Fluent)", "English (Professional)"] }
   ],
   experience: [
     {
-      company: "TechFlow",
-      role: "Senior Product Designer",
-      period: "2021 - Present",
-      description: "Leading the design system team and contributing to the core product UI.",
+      company: "Creative Agency DZ",
+      role: "Senior Graphic Designer",
+      period: "2022 - Present",
+      description: "Leading creative direction for diverse client projects in Algiers.",
       achievements: [
-        "Architected and launched a comprehensive design system used by 40+ engineers.",
-        "Redesigned the core dashboard, increasing user engagement by 25%.",
-        "Mentored junior designers and engineers on UI best practices."
+        "Spearheaded the rebranding of 3 major local startups, resulting in increased brand recognition.",
+        "Manage a team of junior designers, streamlining the workflow using Canva Team features.",
+        "Create comprehensive visual assets for digital marketing campaigns."
       ]
     },
     {
-      company: "CreativePulse",
-      role: "UX Engineer",
-      period: "2018 - 2021",
-      description: "Bridged the gap between design and development teams.",
+      company: "Freelance",
+      role: "Visual Designer",
+      period: "2019 - 2022",
+      description: "Delivered custom design solutions for international and local clients.",
       achievements: [
-        "Implemented complex animations and micro-interactions using Framer Motion.",
-        "Reduced frontend technical debt by 40% through component refactoring.",
-        "Collaborated with product managers to define feature requirements."
+        "Designed and laid out marketing brochures and magazines using Affinity Publisher.",
+        "Created high-converting social media templates for e-commerce businesses.",
+        "Maintained a 5-star rating on freelance platforms for timely delivery and creativity."
       ]
     },
     {
-      company: "StartUp Inc",
-      role: "Frontend Developer",
-      period: "2016 - 2018",
-      description: "Built responsive web applications for early-stage startups.",
+      company: "PrintHouse Algiers",
+      role: "Junior Graphic Designer",
+      period: "2018 - 2019",
+      description: "Assisted in the preparation of print-ready files and client adjustments.",
       achievements: [
-        "Developed the MVP for a fintech application using React and Redux.",
-        "Optimized application performance, achieving a 98 Lighthouse score.",
-        "Integrated third-party APIs for payments and data visualization."
+        "Mastered pre-press processes and color management for offset printing.",
+        "Collaborated with clients to refine logos and business card designs.",
+        "Utilized Affinity Designer for scalable vector illustrations."
       ]
     }
   ],
   education: [
     {
-      school: "Stanford University",
-      degree: "B.S. Computer Science",
-      period: "2012 - 2016",
-      details: "Focus on Human-Computer Interaction. Graduated with Honors."
+      school: "École Supérieure des Beaux-Arts d'Alger",
+      degree: "Bachelor in Graphic Design",
+      period: "2014 - 2018",
+      details: "Specialized in Visual Communication and Typography."
     }
   ]
 };
