@@ -34,7 +34,14 @@ export async function setupVite(app: Express, server: Server) {
   });
 
   app.use(vite.middlewares);
+  
+  // SPA fallback - serve index.html for all non-API routes
   app.use("*", async (req, res, next) => {
+    // Skip API and webhook routes
+    if (req.path.startsWith("/api") || req.path.startsWith("/order") || req.path.startsWith("/setup")) {
+      return next();
+    }
+
     const url = req.originalUrl;
 
     try {
