@@ -5,8 +5,11 @@
     "NODE_ENV": "production"
   },
   "functions": {
-    "server/index-prod.ts": {
-      "runtime": "nodejs20.x"
+    "serveur/**/*.ts": { 
+      "runtime": "nodejs20.x" 
+    },
+    "serveur/**/*.js": { 
+      "runtime": "nodejs20.x" 
     }
   }
 }
