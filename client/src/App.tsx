@@ -5,12 +5,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ResumePage from "@/pages/resume";
 import NotFound from "@/pages/not-found";
+import CVGeneratorPage from "@/pages/generator";
 
 function Router() {
   return (
     <Switch>
       {/* Default route to Resume for this demo */}
       <Route path="/" component={ResumePage} />
+      <Route path="/generator" component={CVGeneratorPage} />
       <Route component={NotFound} />
     </Switch>
   );
