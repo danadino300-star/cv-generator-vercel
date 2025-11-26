@@ -7,7 +7,8 @@ import express, { type Express, type Request } from "express";
 import runApp from "./app";
 
 export async function serveStatic(app: Express, server: Server) {
-  const distPath = path.resolve(import.meta.dirname, "public");
+  // In production, static files are in the public directory next to the compiled index.js
+  const distPath = path.join(path.dirname(import.meta.url.replace("file://", "")), "public");
 
   if (!fs.existsSync(distPath)) {
     throw new Error(
@@ -17,7 +18,7 @@ export async function serveStatic(app: Express, server: Server) {
 
   app.use(express.static(distPath));
 
-  // fall through to index.html if the file doesn't exist
+  // fall through to index.html if the file doesn't exist (for SPA routing)
   app.use("*", (_req, res) => {
     res.sendFile(path.resolve(distPath, "index.html"));
   });
