@@ -2,7 +2,7 @@ import { drizzle } from "drizzle-orm/neon-serverless";
 import { neonConfig, Pool } from "@neondatabase/serverless";
 import ws from "ws";
 import { eq } from "drizzle-orm";
-import { type User, type InsertUser, type CV, type InsertCV, users, cvs } from "@shared/schema";
+import { type User, type InsertUser, type CV, type InsertCV, users, cvs } from "./schema.ts";
 
 neonConfig.webSocketConstructor = ws;
 

@@ -1,8 +1,8 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { createPaypalOrder, capturePaypalOrder, loadPaypalDefault } from "./paypal";
-import { insertUserSchema, insertCVSchema } from "@shared/schema";
+import { storage } from "./storage.ts";
+import { createPaypalOrder, capturePaypalOrder, loadPaypalDefault } from "./paypal.ts";
+import { insertUserSchema, insertCVSchema } from "./schema.ts";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // PayPal routes - from PayPal integration blueprint
@@ -23,13 +23,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { email } = req.params;
       const user = await storage.getUserByEmail(email);
-      
+
       if (!user) {
         // Create new user if not exists
         const newUser = await storage.createUser({ email, cvCount: 0, hasPaid: false });
         return res.json(newUser);
       }
-      
+
       res.json(user);
     } catch (error) {
       console.error("Error fetching user:", error);
@@ -41,16 +41,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const cvData = insertCVSchema.parse(req.body);
       const user = await storage.getUserByEmail(cvData.email);
-      
+
       if (!user) {
         return res.status(404).json({ error: "User not found" });
       }
 
       // Check if user has reached the limit
       if (user.cvCount >= 2 && !user.hasPaid) {
-        return res.status(403).json({ 
-          error: "CV limit reached", 
-          requiresPayment: true 
+        return res.status(403).json({
+          error: "CV limit reached",
+          requiresPayment: true
         });
       }
 
@@ -76,13 +76,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/payment/complete", async (req, res) => {
     try {
       const { email } = req.body;
-      
+
       if (!email) {
         return res.status(400).json({ error: "Email is required" });
       }
 
       await storage.updateUserPaymentStatus(email, true);
-      
+
       res.json({ success: true, message: "Payment recorded successfully" });
     } catch (error) {
       console.error("Error updating payment status:", error);

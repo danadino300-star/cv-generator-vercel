@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Linkedin, Globe, Github } from "lucide-react";
-import profileImage from "@assets/generated_images/professional_headshot_of_a_female_designer.png";
+const profileImage = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&auto=format&fit=crop";
 
 export const resumeData = {
   personalInfo: {
